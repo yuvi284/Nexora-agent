@@ -1,0 +1,18 @@
+# Virtual environment
+venv/
+ai-agent-platform/venv/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE files
+.idea/
+.vscode/
+
+# Local workspace/testing outputs
+**/workspace/
+
+# Environment files
+.env
