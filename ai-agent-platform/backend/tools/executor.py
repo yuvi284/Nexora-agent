@@ -1,14 +1,14 @@
 import subprocess
-import os
 
 WORKSPACE_DIR = "workspace"
 
-def execute_project(run_command):
+
+def execute_project(command):
 
     try:
 
         result = subprocess.run(
-            run_command,
+            command,
             shell=True,
             cwd=WORKSPACE_DIR,
             capture_output=True,

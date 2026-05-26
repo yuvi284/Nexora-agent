@@ -1,5 +1,7 @@
 from config.models import coder_llm
 from schemas.coder_schema import CodingOutput
+from utils.logger import log_step
+
 
 coder_llm = coder_llm.with_structured_output(
     CodingOutput
@@ -7,6 +9,10 @@ coder_llm = coder_llm.with_structured_output(
 
 def coding_agent(state):
 
+    log_step(
+        "coder",
+        "Generating project code..."
+    )
     task = state["user_task"]
     plan = "\n".join(state["plan"])
 
@@ -40,6 +46,11 @@ Generate:
 
     response = coder_llm.invoke(prompt)
 
+    log_step(
+        "coder",
+        f"Generated {len(response.files)} files"
+    )
+    
     return {
         "generated_code": response.dict()
     }

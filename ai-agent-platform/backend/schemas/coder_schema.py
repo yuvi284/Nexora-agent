@@ -1,9 +1,11 @@
 from pydantic import BaseModel
 from typing import List
 
+
 class FileItem(BaseModel):
     path: str
     content: str
+
 
 class CodingOutput(BaseModel):
     files: List[FileItem]

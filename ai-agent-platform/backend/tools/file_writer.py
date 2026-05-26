@@ -2,6 +2,7 @@ import os
 
 WORKSPACE_DIR = "workspace"
 
+
 def write_files(generated_code):
 
     files = generated_code["files"]
